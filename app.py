@@ -134,7 +134,7 @@ async def create_order(order: dict, response: Response, db: Session = Depends(ge
     db.add(neworder)
     db.commit()
     db.refresh(neworder)
-    response.status_code = 201
+    response.status_code = 202
     return neworder
 
 @router_v1.patch('/orders/{order_id}')
