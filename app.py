@@ -130,7 +130,7 @@ async def get_order(order_id: int, db: Session = Depends(get_db)):
 @router_v1.post('/orders')
 async def create_order(order: dict, response: Response, db: Session = Depends(get_db)):
     # TODO: Add validation
-    neworder = models.Order(id=order['id'], menu=order['menu'], much=order['much'], note=order['note'])
+    neworder = models.Order(drink_id=order['drink_id'], much=order['much'], note=order['note'])
     db.add(neworder)
     db.commit()
     db.refresh(neworder)

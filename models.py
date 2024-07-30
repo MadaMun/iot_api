@@ -28,7 +28,6 @@ class Order(Base):
 
     drink_id = Column(Integer, ForeignKey('drinks.id'))
     id = Column(Integer, primary_key=True, index=True, unique=True, autoincrement=True)
-    menu = Column(String, index=True)
     much = Column(Integer, index=True)
     note = Column(String, index=True)
 
